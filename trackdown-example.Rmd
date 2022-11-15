@@ -1,0 +1,92 @@
+---
+title: "Example trackdown doc"
+---
+
+```{r r-chunk-options, echo=FALSE, warning=FALSE}
+library(knitr) 
+knitr::opts_chunk$set(
+  root.dir = here::here(),
+  fig.path = here::here("images//"),
+  echo=FALSE,
+  include = TRUE,
+  dev='png',
+  dpi=300,
+  warning=FALSE
+  )
+```
+
+```{r upload.download, eval=FALSE}
+# Run these in the console; not as part of your R Markdown
+
+# Add your file the first time
+trackdown::upload_file(file = here::here("test.Rmd"),
+                       gpath = "_00_TRACKDOWN/", hide_code = TRUE)
+
+# Do some collaborative editing on GoogleDrive and then download the changes
+# Make sure to Accept the change on GoogleDrive. If they are just "suggestions", they won't be pulled down.
+trackdown::download_file(file = here::here("test.Rmd"),
+                          gpath = "_00_TRACKDOWN/")
+
+# If you make local changes to the Rmd and want to push up to GoogleDrive then use this
+trackdown::update_file(file = here::here("test.Rmd"), 
+                        gpath = "_00_TRACKDOWN/", hide_code = TRUE)
+ 
+```
+
+# FAQs re trackdown
+
+* *Do I need to give tidyverse permission to view all my Googledrive files?* Yes.
+* *Can I restrict the scope? like add an expiration date?* I didn't see how within trackdown.
+* *Can I revoke that permission?* Yes. Delete the token that is stored on your computer.
+* *Where is the token?* Type this `gargle::gargle_oauth_sitrep()` to find all the tokens.
+* *Can I show the figures?* I don't think so?
+* *Does it work with Quarto files?* Go to the GitHub for trackdown and look in the issues. There is a quarto branch that you can install.
+
+# INTRODUCTION
+
+Changes in intro. Add a line to the intro. consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+@fig-seals proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+```{r}
+#| label: fig-seals
+#| fig-cap: "Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel."
+
+include_graphics(here::here("images", "seals.jpg"))
+```
+
+## SAMPLING LOCATIONS
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel (@fig-plot).
+
+```{r} 
+#| label: fig-plot
+#| fig-cap: "Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel."
+
+plot(1:11)
+```
+
+## ANOTHER CHAPTER
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+# YET ANOTHER
+
+*Lorem ipsum dolor sit amet*, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+## AND MORE
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+```{r}
+#| label: fig-coho
+#| fig-cap: "Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel."
+
+include_graphics(here::here("images", "coho.jpg"))
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit (@fig-coho). Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+Proin volutpat elit suscipit, placerat ligula ac, rutrum erat. Maecenas nec elit eu purus tristique finibus. Pellentesque pretium nisi et ullamcorper ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum in ligula in mi accumsan pellentesque at accumsan turpis. Nam lorem nisi, ultricies ut condimentum quis, pharetra nec metus. Cras eleifend auctor enim, ac faucibus sem facilisis vel.
+
+# THE END
